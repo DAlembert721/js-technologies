@@ -1,5 +1,7 @@
 ---
 import Card from "../components/Card.astro";
+const response = await fetch("http://localhost:4321/data.json");
+const data = await response.json();
 ---
 
 <html lang="en">
@@ -19,51 +21,11 @@ import Card from "../components/Card.astro";
 				<ul
 					class="grid grid-cols-[repeat(auto-fill,_minmax(320px,_1fr))] gap-6"
 				>
-					<Card
-						data={{
-							title: "React",
-							subtitle: "Library for interfaces",
-							description:
-								"React is the library for web and native user interfaces. Build user interfaces out of individual pieces called components written in JavaScript.",
-							image: "https://i.postimg.cc/x9MyhM3D/react-system.webp",
-						}}
-					/>
-					<Card
-						data={{
-							title: "React",
-							subtitle: "Library for interfaces",
-							description:
-								"React is the library for web and native user interfaces. Build user interfaces out of individual pieces called components written in JavaScript.",
-							image: "https://i.postimg.cc/x9MyhM3D/react-system.webp",
-						}}
-					/>
-					<Card
-						data={{
-							title: "React",
-							subtitle: "Library for interfaces",
-							description:
-								"React is the library for web and native user interfaces. Build user interfaces out of individual pieces called components written in JavaScript.",
-							image: "https://i.postimg.cc/x9MyhM3D/react-system.webp",
-						}}
-					/>
-					<Card
-						data={{
-							title: "React",
-							subtitle: "Library for interfaces",
-							description:
-								"React is the library for web and native user interfaces. Build user interfaces out of individual pieces called components written in JavaScript.",
-							image: "https://i.postimg.cc/x9MyhM3D/react-system.webp",
-						}}
-					/>
-					<Card
-						data={{
-							title: "React",
-							subtitle: "Library for interfaces",
-							description:
-								"React is the library for web and native user interfaces. Build user interfaces out of individual pieces called components written in JavaScript.",
-							image: "https://i.postimg.cc/x9MyhM3D/react-system.webp",
-						}}
-					/>
+					{
+						data.map((element: object) => {
+							return <Card data={element} />;
+						})
+					}
 				</ul>
 			</div>
 		</section>
