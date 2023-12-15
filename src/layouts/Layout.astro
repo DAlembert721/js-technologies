@@ -1,0 +1,46 @@
+---
+import "../styles/css/index.css";
+
+const { title } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{title}</title>
+    <meta
+      name="description"
+      content="Best JavaScript frameworks and libraries for Frontend web development that enable optimal use of HTML, CSS and JavaScript."
+    />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body>
+    <header class="fixed top-0 w-full bg-sky-500">
+      <nav class="py-4">
+        <div class="container px-4 mx-auto">
+          <h1 class="text-zinc-100 text-xl font-black text-center">
+            JavaScript frameworks and libraries
+          </h1>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer class="bg-sky-500">
+      <nav class="py-4">
+        <div class="container px-4 mx-auto">
+          <a href="https://www.linkedin.com/in/elliotgaramendi/">
+            <h2
+              class="text-zinc-100 font-extrabold text-center transition-all hover:brightness-125"
+            >
+              Made with ♥ by Elliot Garamendi.
+            </h2>
+          </a>
+        </div>
+      </nav>
+    </footer>
+  </body>
+</html>
