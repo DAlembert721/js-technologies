@@ -1,4 +1,5 @@
 ---
+import Card from "../components/Card.astro";
 ---
 
 <html lang="en">
@@ -7,10 +8,65 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>React</title>
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<section class="py-8">
+			<div class="container px-4 mx-auto flex flex-col gap-8">
+				<h1 class="text-sky-500 text-4xl font-black text-center">
+					Frontend frameworks and libraries
+				</h1>
+				<ul
+					class="grid grid-cols-[repeat(auto-fill,_minmax(320px,_1fr))] gap-6"
+				>
+					<Card
+						data={{
+							title: "React",
+							subtitle: "Library for interfaces",
+							description:
+								"React is the library for web and native user interfaces. Build user interfaces out of individual pieces called components written in JavaScript.",
+							image: "https://i.postimg.cc/x9MyhM3D/react-system.webp",
+						}}
+					/>
+					<Card
+						data={{
+							title: "React",
+							subtitle: "Library for interfaces",
+							description:
+								"React is the library for web and native user interfaces. Build user interfaces out of individual pieces called components written in JavaScript.",
+							image: "https://i.postimg.cc/x9MyhM3D/react-system.webp",
+						}}
+					/>
+					<Card
+						data={{
+							title: "React",
+							subtitle: "Library for interfaces",
+							description:
+								"React is the library for web and native user interfaces. Build user interfaces out of individual pieces called components written in JavaScript.",
+							image: "https://i.postimg.cc/x9MyhM3D/react-system.webp",
+						}}
+					/>
+					<Card
+						data={{
+							title: "React",
+							subtitle: "Library for interfaces",
+							description:
+								"React is the library for web and native user interfaces. Build user interfaces out of individual pieces called components written in JavaScript.",
+							image: "https://i.postimg.cc/x9MyhM3D/react-system.webp",
+						}}
+					/>
+					<Card
+						data={{
+							title: "React",
+							subtitle: "Library for interfaces",
+							description:
+								"React is the library for web and native user interfaces. Build user interfaces out of individual pieces called components written in JavaScript.",
+							image: "https://i.postimg.cc/x9MyhM3D/react-system.webp",
+						}}
+					/>
+				</ul>
+			</div>
+		</section>
 	</body>
 </html>
 
