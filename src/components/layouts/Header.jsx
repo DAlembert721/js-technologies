@@ -13,7 +13,7 @@ const Header = () => {
         <div className="container px-4 mx-auto flex items-center justify-between">
           <a href="/" className="flex items-center gap-2">
             <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/768px-JavaScript-logo.png"
+              src="https://www.svgrepo.com/show/353925/javascript.svg"
               alt="JavaScipt"
               width="32"
               height="32"
