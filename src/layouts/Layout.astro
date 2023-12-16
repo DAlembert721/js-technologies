@@ -1,20 +1,39 @@
 ---
 import "../styles/css/index.css";
 
-const { title } = Astro.props;
+let { url, title, description, image } = Astro.props;
+url || (url = "http://localhost:4321");
+title ||
+  (title = "JS Technologies I Best Frameworks and Libraries for JavaScript");
+description ||
+  (description =
+    "The best JavaScript frameworks and libraries for frontend web development that enable optimal use of HTML, CSS and JavaScript by Elliot Garamendi.");
+image ||
+  (image =
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/768px-JavaScript-logo.png");
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>{title}</title>
-    <meta
-      name="description"
-      content="The best JavaScript frameworks and libraries for frontend web development that enable optimal use of HTML, CSS and JavaScript by Elliot Garamendi."
-    />
+    <title>
+      {title}
+    </title>
+    <meta name="description" content={description || ""} />
     <meta name="generator" content={Astro.generator} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={url} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={image} />
+    <link rel="canonical" href={url} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
   </head>
   <body class="flex flex-col min-h-screen">
     <header class="fixed top-0 w-full bg-sky-500">
@@ -26,7 +45,7 @@ const { title } = Astro.props;
               alt="JavaScipt"
               width="32"
               height="32"
-              class="w-8 h-8 block object-cover"
+              class="w-8 h-8 object-cover"
             />
             <h1
               class="text-zinc-100 text-xl font-black text-center transition-all hover:brightness-125"

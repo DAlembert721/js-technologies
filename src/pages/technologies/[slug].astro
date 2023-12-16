@@ -22,11 +22,16 @@ export async function getStaticPaths() {
 }
 
 const {
-  props: { title, subtitle, description, content, image, url, github },
+  props: { title, slug, subtitle, description, content, image, url, github },
 }: { props: Technology } = Astro;
 ---
 
-<Layout title={`${title} I ${subtitle} I JS Technologies`}>
+<Layout
+  url={`http://localhost:4321/technologies/${slug}`}
+  title={`${title} I ${subtitle} I JS Technologies`}
+  description={description}
+  image={image}
+>
   <section class="py-20">
     <div class="container px-4 mx-auto flex flex-col gap-4">
       <a href={url} target="_blank" rel="noopener noreferrer">
