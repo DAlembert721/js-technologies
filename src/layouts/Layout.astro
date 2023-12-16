@@ -1,4 +1,5 @@
 ---
+import { ViewTransitions } from "astro:transitions";
 import Footer from "../components/layouts/Footer";
 import Header from "../components/layouts/Header";
 import "../styles/css/index.css";
@@ -41,6 +42,7 @@ image ||
     <Header client:visible />
     <main>
       <slot />
+      <ViewTransitions />
     </main>
     <Footer />
   </body>
