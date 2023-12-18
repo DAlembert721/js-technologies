@@ -1,11 +1,16 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Header = () => {
   const [like, setLike] = useState(false);
 
   const handleLikeClick = () => {
+    window.localStorage.setItem('like', !like);
     setLike(!like);
   };
+
+  useEffect(() => {
+    setLike(JSON.parse(localStorage.getItem('like')) || false)
+  }, []);
 
   return (
     <header className="fixed top-0 w-full bg-sky-500">
@@ -37,7 +42,7 @@ const Header = () => {
             </li>
           </ul>
           <button className={`text-2xl transition-colors ${like && ' text-yellow-400'}`} onClick={handleLikeClick}>
-            ★ ♥
+            ★
           </button>
         </div>
       </nav>
