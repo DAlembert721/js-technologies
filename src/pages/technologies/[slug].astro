@@ -1,5 +1,6 @@
 ---
 interface Technology {
+  id: string;
   title: string;
   slug: string;
   subtitle: string;
@@ -22,7 +23,7 @@ export async function getStaticPaths() {
 }
 
 const {
-  props: { title, slug, subtitle, description, content, image, url, github },
+  props: { id, title, slug, subtitle, description, content, image, url, github },
 }: { props: Technology } = Astro;
 ---
 
@@ -49,6 +50,7 @@ const {
             height="256"
             loading="lazy"
             class="w-64 h-64 object-contain"
+            transition:name={`technology${id}`}
           />
         </a>
         <div class="flex gap-2">

@@ -37,12 +37,12 @@ image ||
     <meta property="twitter:image" content={image} />
     <link rel="canonical" href={url} />
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <ViewTransitions />
   </head>
   <body class="flex flex-col min-h-screen">
     <Header client:visible transition:persist />
     <main>
       <slot />
-      <ViewTransitions />
     </main>
     <Footer />
   </body>

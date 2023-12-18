@@ -13,7 +13,7 @@ const Header = () => {
   }, []);
 
   return (
-    <header className="fixed top-0 w-full bg-sky-500">
+    <header className="fixed z-50 top-0 w-full bg-sky-500">
       <nav className="py-4">
         <div className="container px-4 mx-auto flex items-center justify-between">
           <a href="/" className="flex items-center gap-2">
@@ -24,6 +24,7 @@ const Header = () => {
               height="32"
               loading="lazy"
               className="w-8 h-8 object-cover"
+              transition:name="logo"
             />
             <h1
               className="text-zinc-100 text-xl font-black text-center transition-all hover:brightness-125"
