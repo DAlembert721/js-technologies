@@ -5,7 +5,7 @@ import Header from "../components/layouts/Header";
 import "../styles/css/index.css";
 
 let { url, title, description, image } = Astro.props;
-url || (url = "https://js-technologies.netlify.app");
+url || (url = import.meta.env.FRONTEND_URL);
 title ||
   (title = "JS Technologies I Best Frameworks and Libraries for JavaScript");
 description ||
