@@ -23,7 +23,17 @@ export async function getStaticPaths() {
 }
 
 const {
-  props: { id, title, slug, subtitle, description, content, image, url, github },
+  props: {
+    id,
+    title,
+    slug,
+    subtitle,
+    description,
+    content,
+    image,
+    url,
+    github,
+  },
 }: { props: Technology } = Astro;
 ---
 
@@ -36,10 +46,20 @@ const {
   <section class="py-20">
     <div class="container px-4 mx-auto flex flex-col gap-4">
       <a href={url} target="_blank" rel="noopener noreferrer">
-        <h1 class="text-sky-500 text-4xl font-black text-center">{title}</h1>
+        <h1
+          class="text-sky-500 text-4xl font-black text-center"
+          transition:name={`technology-title-${id}`}
+        >
+          {title}
+        </h1>
       </a>
-      <h2 class="text-zinc-400 text-2xl font-black text-center">{subtitle}</h2>
-      <p>{description}</p>
+      <h2
+        class="text-zinc-400 text-2xl font-black text-center"
+        transition:name={`technology-subtitle-${id}`}
+      >
+        {subtitle}
+      </h2>
+      <p transition:name={`technology-description-${id}`}>{description}</p>
       <p>{content}</p>
       <div class="flex flex-col items-center gap-2">
         <a href={url} target="_blank" rel="noopener noreferrer">
@@ -50,7 +70,7 @@ const {
             height="256"
             loading="lazy"
             class="w-64 h-64 object-contain"
-            transition:name={`technology${id}`}
+            transition:name={`technology-image-${id}`}
           />
         </a>
         <div class="flex gap-2">
