@@ -36,7 +36,9 @@ const Header = () => {
               </a>
             </li>
           </ul>
-          <button className={`text-2xl transition-colors ${like && 'text-red-500'}`} onClick={handleLikeClick}>♥</button>
+          <button className={`text-2xl transition-colors ${like && ' text-yellow-400'}`} onClick={handleLikeClick}>
+            ★ ♥
+          </button>
         </div>
       </nav>
     </header>
