@@ -17,6 +17,7 @@ const Header = () => {
               alt="JavaScipt"
               width="32"
               height="32"
+              loading="lazy"
               className="w-8 h-8 object-cover"
             />
             <h1
